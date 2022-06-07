@@ -114,13 +114,13 @@ for($ver=3;$ver>=1;$ver--)
      }
  echo "<br>";
 }
-
-/*for($ver=1;$ver<=3;$ver++)
+$ch = 'A';
+for($ver=1;$ver<=3;$ver++)
 {
    for ($hor=1;$hor<=$ver;$hor++)
     {
-	 echo "";
-     
+	 echo $ch;
+     $ch++;
 	    if($hor< $ver)
 		 {
 		   echo " ";
@@ -128,11 +128,31 @@ for($ver=3;$ver>=1;$ver--)
      }
  echo "<br>";
 }
-*/
 //8
+echo "<br>";
 $array2 = [
             [1,2, 3, 'A'],
             [1, 2, 'B', 'C'],
             [1, 'D', 'E', 'F'],
-          ];
-echo $array2[1][2];
+        ];
+for($x=0; $x<=2; $x++)
+    {
+    for($y= 0; $y<=2-$x; $y++)
+        {
+            
+            echo $array2[$x][$y]." ";
+        }
+            echo "<br>";
+    }
+        echo "<br>";
+
+for($x=0; $x<=2; $x++)
+        {
+        for($y=3-$x; $y<=3; $y++)
+            {
+                
+                echo $array2[$x][$y]." ";
+            }
+                echo "<br>";
+        }
+            echo "<br>";
