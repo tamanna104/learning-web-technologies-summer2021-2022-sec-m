@@ -59,7 +59,7 @@
                         echo "<td><b>Name: </b>".$name."</td>";
                         echo "</tr>";
                         echo "<tr>";
-                        echo "<td><b>Password: </b>".$password."</td>";
+                        echo "<td><b>Password: </b><input type = 'password' disabled value = '".$password."'/></td>";
                         echo "</tr>";
                         echo "<tr>";
                         echo "<td><b>Email: </b>".$email."</td>";
@@ -136,6 +136,5 @@
 </style>
 <?php
 		}
-			
-
 ?>
+

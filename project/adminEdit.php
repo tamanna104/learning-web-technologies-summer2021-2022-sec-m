@@ -1,4 +1,3 @@
-
 <?php
     $adminId = $_GET['id'];
     $adminInfo ='';

@@ -75,7 +75,7 @@
 							echo "<tr>";
 							echo "<td>".$id."</td>";
 							echo "<td>".$name."</td>";
-							echo "<td>".$password."</td>";
+							echo "<td><input type = 'password' disabled value = '".$password."'/></td>";
 							echo "<td>".$email."</td>";
 							echo "<td>".$contact."</td>";
 							echo "<td>".$dob."</td>";
@@ -132,21 +132,22 @@
       background-color: #FFF;
     }
     input {
-      margin-bottom: 15px;
-      padding: 6px;
+      margin-bottom: 10px;
+      padding: 3px;
       justify-content: center;
     }
 	th {
-		padding: 5px 15px;
+		padding: 2px 10px;
 		text-align: center;
 	}
 	td {
-		padding: 5px 15px;
+		padding: 2px 10px;
 		text-align: center;
 	}
 </style>
-<?php
-		}
-			
-
+<?php 
+	}else{
+		echo "invalid request";
+	}  
 ?>
+

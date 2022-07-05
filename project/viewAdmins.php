@@ -63,7 +63,7 @@
 							echo "<tr>";
 							echo "<td>".$id."</td>";
 							echo "<td>".$username."</td>";
-							echo "<td>".$password."</td>";
+							echo "<td> <input type = 'password' disabled value = '".$password."'/></td>";
 							echo "<td>".$email."</td>";
 							echo "<td>".$address."</td>";
 							echo "<td>
@@ -85,7 +85,7 @@
 	</form>
 	<?php 
 		} else {
-			echo "There is no admin";	
+			echo "There is no Admin";	
 		}
 	?>
 	<br/>
@@ -128,8 +128,8 @@
 	}
 </style>
 
-<?php
-		}
-			
-
+<?php 
+	}else{
+		echo "invalid request";
+	}  
 ?>

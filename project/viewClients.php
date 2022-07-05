@@ -65,12 +65,12 @@
 							$country = trim($clients[5]);
 							echo "<tr>";
 							echo "<td>".$username."</td>";
-							echo "<td>".$password."</td>";
+							echo "<td><input type = 'password' disabled value = '".$password."'/></td>";
 							echo "<td>".$email."</td>";
 							echo "<td>".$dob."</td>";
 							echo "<td>".$country."</td>";
 							echo "<td>
-							<button type='submit' name='deleteAdmin' value='$clientId'>Delete</button>
+							<button type='submit' name='deleteAdmin' value='$clientId'>Remove</button>
 							</td>";
 							echo "</tr>";
 						}
@@ -88,7 +88,7 @@
 	<?php 
 		} else {
 			'<a href="adminHome.php">Home</a>';
-			echo "There is no Manager";	
+			echo "There is no Client";	
 			
 		}
 	?>
@@ -131,8 +131,8 @@
 		text-align: center;
 	}
 </style>
-<?php
-		}
-			
-
+<?php 
+	}else{
+		echo "invalid request";
+	}  
 ?>

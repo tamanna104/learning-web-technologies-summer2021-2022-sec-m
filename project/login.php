@@ -24,6 +24,7 @@
 				header('location: adminHome.php');
 			}
 		}
-		echo "invalid user";
+		echo "invalid user <br><br>";
+		echo'<a href="reg.html"> Back </a>';
 	}
 ?>

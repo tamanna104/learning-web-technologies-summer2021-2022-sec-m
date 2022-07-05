@@ -1,3 +1,8 @@
+<?php
+		if(isset($_COOKIE['status'])){
+        
+			
+?>
 <?php 
 	session_start();
 	if(isset($_REQUEST['submit'])){
@@ -7,7 +12,6 @@
 		$confirmpass = $_POST['confirmpass'];
 		$email = $_POST['email'];
 		$address = $_POST['address'];
-		echo $id;
         if($id != null && $username != null && $password != null && $confirmpass != null && $email != null && $address != null)
 		{
 			$guides = $id."|".$username."|".$password."|".$confirmpass."|".$email."|".$address."\r\n";
@@ -82,4 +86,9 @@
     </form>
   </body>
 </html>
+<?php 
+	}else{
+		echo "invalid request";
+	}  
+?>
 

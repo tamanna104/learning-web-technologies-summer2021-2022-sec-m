@@ -1,3 +1,8 @@
+<?php
+		if(isset($_COOKIE['status'])){
+        
+			
+?>
 <?php 
 	session_start();
 	if(isset($_REQUEST['submit'])){
@@ -7,18 +12,36 @@
 		$confirmpass = $_POST['confirmpass'];
 		$email = $_POST['email'];
 		$address = $_POST['address'];
-		echo $id;
-        if($id != null && $username != null && $password != null && $confirmpass != null && $email != null && $address != null)
+
+        if($id == null && $username == null && $password == null && $confirmpass == null && $email == null && $address == null)
 		{
-			$managers = $id."|".$username."|".$password."|".$confirmpass."|".$email."|".$address."\r\n";
+			echo "Please fill up the fields";
+		} 
+        else if($username == null || is_numeric($username[0]) || str_contains($username[0],' ') || str_contains($username,'%') || str_contains($username,'$') || str_contains($username,'*') )
+		{
+			echo "Invalid name. ";
+		}
+		else if(strlen($password) < 8 || strlen($password) > 16)
+		{
+			echo "Password must be between 6 and 16 characters in length. ";
+		}
+		else if (strpos($password, '(')=== false && strpos($password, '&')=== false && strpos($password, '}')=== false && strpos($password, '{')=== false && strpos($password, '%')=== false && strpos($password, '!')=== false && strpos($password, '#')=== false && strpos($password, '@')=== false && strpos($password,'+')=== false && strpos($password,'_')=== false && strpos($password,'.')=== false)
+		{
+			echo "Password is weak. Must contain a special character. ";
+		}
+		else if($password != $confirmpass)
+		{
+			echo "Password and confirm password doesn't match. ";
+		}
+		else {
+            $managers = $id."|".$username."|".$password."|".$confirmpass."|".$email."|".$address."\r\n";
 			$file = fopen('managerList.txt', 'a');
 			fwrite($file, $managers);
 			header('location: viewManagers.php');
-		} else {
-            echo "<h1>Fields are empty</h1>";
         }
+    }
 	
-	}	
+		
 ?>
 <html>
   <head>
@@ -83,3 +106,8 @@
   </body>
 </html>
 
+<?php 
+	}else{
+		echo "invalid request";
+	}  
+?>

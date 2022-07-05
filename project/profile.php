@@ -43,7 +43,8 @@
 									echo "<tr>";
 									echo "<td>".$id."</td>";
 									echo "<td>".$username."</td>";
-									echo "<td>".$password."</td>";
+
+									echo "<td><input type = 'password' disabled value = '".$password."'/></td>";
 									echo "<td>".$email."</td>";
 									echo "<td>".$address."</td>";
 									echo "</tr>";
@@ -94,8 +95,8 @@
 		text-align: center;
 	}
 </style>
-<?php
-		}
-			
-
+<?php 
+	}else{
+		echo "invalid request";
+	}  
 ?>

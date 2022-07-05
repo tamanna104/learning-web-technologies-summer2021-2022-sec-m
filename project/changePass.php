@@ -1,3 +1,8 @@
+<?php
+		if(isset($_COOKIE['status'])){
+        
+			
+?>
 <html>
   <head>
     <title>Change Password</title>
@@ -64,9 +69,21 @@
             $confirmpass = trim($user[3]);
             $email = trim($user[4]);
             $address = trim($user[5]);
-            if($password!=$_POST['currentpass'])
+            if($_POST['currentpass'] == null || $_POST['newpass'] == null || $_POST['confirmpass'] == null)
+            {
+              echo "Empty Submission please recheck";
+            }
+            else if($password!=$_POST['currentpass'])
             {
               echo "Password doesn't match";
+            }
+            else if(strlen($_POST['newpass']) < 6 || strlen($_POST['newpass']) > 16)
+            {
+              echo "Password must be between 6 and 16 characters in length. ";
+            }
+            else if (strpos($_POST['newpass'], '$')=== false && strpos($_POST['newpass'], '(')=== false && strpos($_POST['newpass'], '&')=== false && strpos($_POST['newpass'], '}')=== false && strpos($_POST['newpass'], '{')=== false && strpos($_POST['newpass'], '%')=== false && strpos($_POST['newpass'], '!')=== false && strpos($_POST['newpass'], '#')=== false && strpos($_POST['newpass'], '@')=== false && strpos($_POST['newpass'],'+')=== false && strpos($_POST['newpass'],'_')=== false && strpos($_POST['newpass'],'.')=== false)
+            {
+              echo "Password is weak. Must contain a special character. ";
             }
             else if($_POST['newpass'] != $_POST['confirmpass'])
             {
@@ -110,3 +127,8 @@
       text-align: center;
     }
   </style>
+  <?php 
+	}else{
+		echo "invalid request";
+	}  
+?>
