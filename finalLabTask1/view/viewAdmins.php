@@ -7,14 +7,14 @@
 	function deleteAdmin() {
 		$updatedData = "";
 		$selectedId = $_POST['deleteAdmin'];
-		$file = fopen('adminList.txt', 'r');
+		$file = fopen('../model/adminList.txt', 'r');
 		while (!feof($file)) {
 			$data=fgets($file);
 			$user = explode('|', $data);
 			if(isset($user) && sizeof($user) > 1 && $user[0] != $selectedId)
 			{
 				$updatedData = $user[0]."|".$user[1]."|".$user[2]."|".$user[3]."|".$user[4]."|".$user[5];
-				$newFile = fopen('temp.txt', 'a');
+				$newFile = fopen('../model/temp.txt', 'a');
 				fwrite($newFile, $updatedData);
 				fclose($newFile);
 			}
@@ -29,11 +29,11 @@
 <header class="header">
 	<a class="headLink" href="adminHome.php">Home</a>
 	<h2>AdminList Info</h2>
-	<a class="headLink" href="addAdmin.php">Add New</a>
+	<a class="headLink" href="../controller/addAdmin.php">Add New</a>
 </header>
 <body>
 	<?php 
-		if (file_exists('./adminList.txt')) {
+		if (file_exists('../model/adminList.txt')) {
 	?>
 	<form action="viewAdmins.php" method="post">
 		<br>
@@ -49,7 +49,7 @@
 
 				</tr>
 				<?php
-					$file = fopen('adminList.txt', 'r');
+					$file = fopen('../model/adminList.txt', 'r');
 					while (!feof($file)) {
 						$data=fgets($file);
 						$user = explode('|', $data);
@@ -68,15 +68,15 @@
 							echo "<td>".$address."</td>";
 							echo "<td>
 							<button type='submit' name='deleteAdmin' value='$id'>Delete</button>
-							<button type='button'> <a href='adminEdit.php?id=$id'>Edit</a></button>
+							<button type='button'> <a href='../controller/adminEdit.php?id=$id'>Edit</a></button>
 							</td>";
 							echo "</tr>";
 						}
 					}
 					fclose($file);
 					if ($GLOBALS['listUpdated']) {
-						unlink('adminList.txt');
-						rename('temp.txt', 'adminList.txt');
+						unlink('../model/adminList.txt');
+						rename('../model/temp.txt', '../model/adminList.txt');
 						header('location: viewAdmins.php');
 					}
 				?>

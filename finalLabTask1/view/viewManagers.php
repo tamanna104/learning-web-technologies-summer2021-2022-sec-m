@@ -7,14 +7,14 @@
 	function deleteAdmin() {
 		$updatedData = "";
 		$selectedId = $_POST['deleteAdmin'];
-		$file = fopen('managerList.txt', 'r');
+		$file = fopen('../model/managerList.txt', 'r');
 		while (!feof($file)) {
 			$data=fgets($file);
 			$managers = explode('|', $data);
 			if(isset($managers) && sizeof($managers) > 1 && $managers[0] != $selectedId)
 			{
 				$updatedData = $managers[0]."|".$managers[1]."|".$managers[2]."|".$managers[3]."|".$managers[4]."|".$managers[5]."|".$managers[6]."|".$managers[7]."|".$managers[8]."|".$managers[9];
-				$newFile = fopen('temp.txt', 'a');
+				$newFile = fopen('../model/temp.txt', 'a');
 				fwrite($newFile, $updatedData);
 				fclose($newFile);
 			}
@@ -29,11 +29,11 @@
 <header class="header">
 	<a class="headLink" href="adminHome.php">Home</a>
 	<h2>Manager Info</h2>
-	<a class="headLink" href="managerRequests.php">Manager Requests</a>
+	<a class="headLink" href="../controller/managerRequests.php">Manager Requests</a>
 </header>
 <body>
 	<?php 
-		if (file_exists('./managerList.txt')) {
+		if (file_exists('../model/managerList.txt')) {
 	?>
 		<form action="viewManagers.php" method="post">
 			<br><br>
@@ -54,7 +54,7 @@
 				</tr>
 				<?php
 					
-					$file = fopen('managerList.txt', 'r');
+					$file = fopen('../model/managerList.txt', 'r');
 					while (!feof($file)) 
 					{
 						$data=fgets($file);
@@ -85,7 +85,7 @@
 							echo "<td>".$website."</td>";
 							echo "<td>
 							<button type='submit' name='deleteAdmin' value='$id'>Delete</button><br><br>
-							<button type='button'> <a href='managerEdit.php?id=$id'>Edit</a></button>
+							<button type='button'> <a href='../controller/managerEdit.php?id=$id'>Edit</a></button>
 							</td>";
 							echo "</tr>";
 						}
@@ -93,8 +93,8 @@
 					}
 					fclose($file);
 					if ($GLOBALS['listUpdated']) {
-						unlink('managerList.txt');
-						rename('temp.txt', 'managerList.txt');
+						unlink('../model/managerList.txt');
+						rename('../model/temp.txt', '../model/managerList.txt');
 						header('location: viewManagers.php');
 					}
 				?>

@@ -3,7 +3,6 @@
 3|Bhitto|147852369|bhitto@gmail.com|2001-07-03|Pakisthan
 4|Leon|0123456789|leon@gmail.com|2001-07-04|Bangladesh
 5|Rimi|423657894|rimi224@gmail.com|2001-05-05|Korea
-6|Elmi|876543456|elmi563@gmail.com|2000-11-15|Japan
 7|Yuriko|69786fte5y5|yuriko23@gmail.com|2005-12-30|China
 8|Bakugou|42363fdgds4|baku54@gmail.com|1999-01-15|Japan
 9|Amy|frsgr3dc4|amy388@gmail.com|1982-03-13|USA

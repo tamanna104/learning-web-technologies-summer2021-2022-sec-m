@@ -23,7 +23,7 @@
 			</tr>
 			<?php
 				
-				$file = fopen('tourGuideList.txt', 'r');
+				$file = fopen('../model/tourGuideList.txt', 'r');
 				while (!feof($file)) 
 				{
 					$data=fgets($file);

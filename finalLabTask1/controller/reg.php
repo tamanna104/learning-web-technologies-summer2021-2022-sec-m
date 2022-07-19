@@ -32,9 +32,9 @@
 		else
 		{
 			$user = $id."|".$username."|".$password."|".$confirmpass."|".$email."|".$address."\r\n";
-			$file = fopen('admin.txt', 'a');
+			$file = fopen('../model/admin.txt', 'a');
 			fwrite($file, $user);
-			header('location: login.html');
+			header('location: ../view/login.html');
 		}
 	
 	}

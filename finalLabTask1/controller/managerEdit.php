@@ -1,7 +1,7 @@
 <?php
     $adminId = $_GET['id'];
     $adminInfo ='';
-    $file = fopen('managerList.txt', 'r');
+    $file = fopen('../model/managerList.txt', 'r');
     while (!feof($file)) {
         $data=fgets($file);
         $managers = explode('|', $data);
@@ -20,7 +20,7 @@
 	function editAdmin() {
 		$updatedData = "";
         
-		$file = fopen('managerList.txt', 'r');
+		$file = fopen('../model/managerList.txt', 'r');
 		while (!feof($file)) {
 			$data=fgets($file);
 			$managers = explode('|', $data);
@@ -34,15 +34,15 @@
                 {
                     $updatedData = $managers[0]."|".$managers[1]."|".$managers[2]."|".$managers[3]."|".$managers[4]."|".$managers[5]."|".$managers[6]."|".$managers[7]."|".$managers[8]."|".$managers[9];
                 }
-                $newFile = fopen('temp.txt', 'a');
+                $newFile = fopen('../model/temp.txt', 'a');
 				fwrite($newFile, $updatedData);
 				fclose($newFile);
 			}
 		}
         fclose($file);
-        unlink('managerList.txt');
-        rename('temp.txt', 'managerList.txt');
-        header('location: viewManagers.php');
+        unlink('../model/managerList.txt');
+        rename('../model/temp.txt', '../model/managerList.txt');
+        header('location: ../view/viewManagers.php');
 
 	}
 ?>
@@ -123,7 +123,7 @@
                     <td>
                         <hr>
                         <button type='submit' name='editAdmin' value='$id'>Save</button>
-                        <a href="viewManagers.php">Back</a>
+                        <a href="../view/viewManagers.php">Back</a>
                     </td>
                 </tr>
                 

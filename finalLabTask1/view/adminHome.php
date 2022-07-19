@@ -11,12 +11,12 @@
 <fieldset>
 	<center class="content">
 		<p><b><h1>Trip Planner</h1></b></p>
-		<a href="profile.php"> Profile </a><br>
+		<a href="../controller/profile.php"> Profile </a><br>
 		<a href="viewAdmins.php"> View Admins </a><br>
 		<a href="viewManagers.php"> View Managers </a><br>
 		<a href="viewClients.php"> View Clients </a><br>
 		<a href="viewTourGuides.php"> View Tour Guides </a><br>
-		<a href="logout.php"> logout </a>
+		<a href="../controller/logout.php"> logout </a>
 	</center>
 </body>
 </html>

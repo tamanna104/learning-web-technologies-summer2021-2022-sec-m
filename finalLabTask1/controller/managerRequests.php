@@ -7,14 +7,14 @@
 	function hireManager() {
 		$updatedData = "";
 		$selectedId = $_POST['hireManager'];
-		$file = fopen('managerRequestList.txt', 'r');
+		$file = fopen('../model/managerRequestList.txt', 'r');
 		while (!feof($file)) {
 			$data=fgets($file);
 			$user = explode('|', $data);
 			if(isset($user) && sizeof($user) > 1 && $user[0] == $selectedId)
 			{
 				$updatedData = $user[0]."|".$user[1]."|".$user[2]."|".$user[3]."|".$user[4]."|".$user[5]."|".$user[6]."|".$user[7]."|".$user[8]."|".$user[9];
-				$newFile = fopen('managerList.txt', 'a');
+				$newFile = fopen('../model/managerList.txt', 'a');
 				fwrite($newFile, $updatedData);
 				fclose($newFile);
 			}
@@ -27,14 +27,14 @@
 	<title>Manager Request Info</title>
 </head>
 <header class="header">
-	<a class="headLink" href="viewManagers.php">Back</a>
+	<a class="headLink" href="../view/viewManagers.php">Back</a>
 	<h2>Manager Request Info</h2>
-	<a class="headLink" href="adminHome.php">Home</a>
+	<a class="headLink" href="../view/adminHome.php">Home</a>
 </header>
 <body>
     <form method="post">
             <?php
-                $file = fopen('managerRequestList.txt', 'r');
+                $file = fopen('../model/managerRequestList.txt', 'r');
                 while (!feof($file)) 
                 {
                     echo '<br>';

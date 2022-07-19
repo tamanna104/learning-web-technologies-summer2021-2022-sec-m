@@ -8,7 +8,7 @@
     <title>My Profile</title>
 </head>
 <header class="header">
-	<a href="adminHome.php">Back</a>
+	<a href="../view/adminHome.php">Back</a>
 	<h2>My Profile</h2>
 	<a href="changePass.php">Change Password</a>
 </header>
@@ -26,7 +26,7 @@
 				</tr>
 				<?php
 					
-					$file = fopen('admin.txt', 'r');
+					$file = fopen('../model/admin.txt', 'r');
 					while (!feof($file)) {
 							$data=fgets($file);
 							$user = explode('|', $data);

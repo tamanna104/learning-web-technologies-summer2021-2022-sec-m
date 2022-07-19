@@ -35,9 +35,9 @@
 		}
         else {
             $user = $id."|".$username."|".$password."|".$confirmpass."|".$email."|".$address."\r\n";
-			$file = fopen('adminList.txt', 'a');
+			$file = fopen('../model/adminList.txt', 'a');
 			fwrite($file, $user);
-			header('location: viewAdmins.php');
+			header('location: ../model/viewAdmins.php');
         }
 	
 	}	
@@ -93,7 +93,7 @@
                     <td>
                         <hr>
                         <input type="submit" name="submit" value="Submit" />
-                        <a href="viewAdmins.php"> Back </a>
+                        <a href="../view/viewAdmins.php"> Back </a>
                     </td>
                 </tr>
             </table>

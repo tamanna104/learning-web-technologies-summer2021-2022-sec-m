@@ -39,7 +39,7 @@
                     <td>
                         <hr>
                         <input type="submit" name="submit" value="Submit" />
-                        <a href="adminHome.php"> Back </a>
+                        <a href="../view/adminHome.php"> Back </a>
                     </td>
                 </tr>
             </table>
@@ -54,7 +54,7 @@
 <?php
   if(isset($_POST['submit']))
   {
-    $file = fopen('admin.txt', 'r');
+    $file = fopen('../model/admin.txt', 'r');
     while (!feof($file)) {
         $data=fgets($file);
         $user = explode('|', $data);
@@ -94,7 +94,7 @@
               $password = $_POST['newpass'];
               $confirmpass = $_POST['newpass'];
               $user = $id."|".$username."|".$password."|".$confirmpass."|".$email."|".$address."\r\n";
-              $updateFile = fopen('admin.txt', 'w');
+              $updateFile = fopen('../model/admin.txt', 'w');
               fwrite($updateFile, $user);
               header('location: profile.php');
             }

@@ -7,7 +7,7 @@
 	function deleteAdmin() {
 		$updatedData = "";
 		$selectedId = $_POST['deleteAdmin'];
-		$file = fopen('clientList2.txt', 'r');
+		$file = fopen('../model/clientList2.txt', 'r');
 		while (!feof($file)) {
 			$data=fgets($file);
 			$clients = explode('|', $data);
@@ -15,7 +15,7 @@
 			if(isset($clients) && sizeof($clients) > 1 && $clients[0] != $selectedId)
 			{
 				$updatedData = $clients[0]."|".$clients[1]."|".$clients[2]."|".$clients[3]."|".$clients[4]."|".$clients[5];
-				$newFile = fopen('temp.txt', 'a');
+				$newFile = fopen('../model/temp.txt', 'a');
 				fwrite($newFile, $updatedData);
 				fclose($newFile);
 			}
@@ -34,7 +34,7 @@
 </header>
 <body>
 	<?php 
-		if (file_exists('./clientList2.txt')) {
+		if (file_exists('../model/clientList2.txt')) {
 	?>
 		
 	<form action="viewClients.php" method="post">
@@ -50,7 +50,7 @@
 			</tr>
 			<?php
 				
-				$file = fopen('clientList2.txt', 'r');
+				$file = fopen('../model/clientList2.txt', 'r');
 				while (!feof($file)) {
 						$data=fgets($file);
 						$clients = explode('|', $data);
@@ -78,8 +78,8 @@
 					}
 					fclose($file);
 					if ($GLOBALS['listUpdated2']) {
-					unlink('clientList2.txt');
-					rename('temp.txt', 'clientList2.txt');
+					unlink('../model/clientList2.txt');
+					rename('../model/temp.txt', '../model/clientList2.txt');
 					header('location: viewClients.php');
 					}
 		?>

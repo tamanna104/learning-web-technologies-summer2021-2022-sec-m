@@ -3,5 +3,5 @@
 	session_start();
 	session_destroy();
 	setcookie('status', 'true', time()-100, '/');
-	header('location: login.html');
+	header('location: ../model/login.html');
 ?>

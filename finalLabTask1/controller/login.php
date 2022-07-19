@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	require_once "../model/adminModel.php";
 
 	//print_r($_GET);  
 	$id = $_POST['id'];
@@ -11,20 +12,16 @@
 		echo "null id/password";
 	}
 	else{
-		$file = fopen('../model/admin.txt', 'r');
+		$status = login($id, $password);
 		
-		while (!feof($file)) {
-			$data=fgets($file);
-			$user = explode('|', $data);
-			if($id == trim($user[0]) && $password == trim($user[2])){
-				$_SESSION['status'] = true;
-				setcookie('status', 'true', time()+6000000, '/');
-				setcookie('myId', $id, time()+6000000, '/');
-				setcookie('myPassword', $password, time()+6000000, '/');
-				header('location: ../view/adminHome.php');
-			}
+		if($status){
+			$_SESSION['status'] = true;
+			setcookie('status', 'true', time()+6000000, '/');
+			setcookie('myId', $id, time()+6000000, '/');
+			setcookie('myPassword', $password, time()+6000000, '/');
+			header('location: ../view/adminHome.php');
 		}
 		echo "invalid user <br><br>";
-		echo'<a href="../model/reg.html"> Back </a>';
+		echo'<a href="reg.html"> Back </a>';
 	}
 ?>
