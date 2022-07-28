@@ -1,0 +1,1 @@
+moving the square from left to right for every click
