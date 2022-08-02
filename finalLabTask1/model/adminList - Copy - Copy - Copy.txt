@@ -1,4 +1,0 @@
-3|mina|345|345|mina10@gmail.com|Uttara2
-1|munni45|111|111|hena@gmail.com|Mirpur
-6|bris|bris|bris|bris@gmail.com|Uttara
-2|tina|tina|tina|tina@gmail.com|Mahakhali

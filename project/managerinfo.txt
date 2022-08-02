@@ -1,2 +1,0 @@
-1|Tom Latham | 456 | tom09@gmail.com | 01789567891 | 02-Jun-1990 | Male | Dhaka, Bangladesh | 3 years of working experience as a HR manager at XYZ travel Agency | https://www.linkedin.com/xyz585
-2|Jeorge Stebin | ar567 | jstebin09@gmail.com | 01786359901 | 09-Dec-1992 | Male | Chittagong, Bangladesh | 2 years of working experience in public-relation management at ABC travel Agency  | https://www.linkedin.com/jsteb90

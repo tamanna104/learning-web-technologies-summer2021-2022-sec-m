@@ -1,2 +1,0 @@
-4|Naruto|456|naruto@gmail.com|0178956590|02-Jun-1995|Male|Dhaka,Bangladesh|5 years of working experience as a HR manager at XYZ travel Agency|https://www.linkedin.com/xyz585
-5|Sakura|ar567|sakura09@gmail.com|01786344401|09-Dec-1999|Female|Chittagong,Bangladesh|2 years of working experience in public-relation management at ABC travel Agency| https://www.linkedin.com/jsteb90

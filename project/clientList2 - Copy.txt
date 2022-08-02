@@ -1,4 +1,0 @@
-1|Sadia|123456789|sadia@gmail.com|2001-07-01|Bangladesh
-2|Tamanna|987456321|tamanna@gmail.com|2001-07-02|India
-3|Bhitto|147852369|bhitto@gmail.com|2001-07-03|Pakisthan
-4|Leon|0123456789|leon@gmail.com|2001-07-04|Bangladesh
