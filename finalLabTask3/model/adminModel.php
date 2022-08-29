@@ -14,6 +14,7 @@
         }
     }
 
+<<<<<<< HEAD
     // function signup($user){
     //     $conn = getConnection();
 	// 	$sql = "insert into users values('{$user['username']}', password='{$user['password']}'";
@@ -23,5 +24,16 @@
     //         return false;
     //     }
     // }
+=======
+    function signup($user){
+        $conn = getConnection();
+		$sql = "insert into users values('{$user['username']}', '{$user['password']}', '{$user['confirmpass']}', '{$user['email']}', '{$user['address']}'";
+        if(mysqli_query($conn, $sql)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+>>>>>>> 7a090bc4c0dbbd5cf10c1e31f86e01fdb59c190a
 
 ?>

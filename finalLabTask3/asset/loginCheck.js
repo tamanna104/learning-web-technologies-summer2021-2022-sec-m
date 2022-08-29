@@ -10,4 +10,8 @@ function loginCheck() {
     userid.innerHTML = "";
     userpass.innerHTML = "";
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7a090bc4c0dbbd5cf10c1e31f86e01fdb59c190a
